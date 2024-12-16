@@ -29,5 +29,5 @@ jobs:
       # Step 4: Build and push Docker image
       - name: Build and Push Docker image
         run: |
-          docker build -f Shopping/Shopping.API/Dockerfile -t kkshoppingappacr.azurecr.io/shoppingapidepl:${{ github.run_id }} .
+          docker build -f Shopping/Shopping.API/Dockerfile -t kkshoppingappacr.azurecr.io/shoppingapidepl:${{ github.run_id }} Shopping/Shopping.API
           docker push kkshoppingappacr.azurecr.io/shoppingapidepl:${{ github.run_id }}
