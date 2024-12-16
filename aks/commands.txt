@@ -5,10 +5,10 @@ az login (login to azure cli)
 az login --tenant [tenant id]
 
 --Create Resource Group
-az group create --name myRG --location westus
+az group create --name learning-azure-rg --location westus
 
 --Create ACR resource
-az acr create --resource-group myRG --name kkshoppingappacr --sku Basic --location westus
+az acr create --resource-group learning-azure-rg --name kkshoppingappacr --sku Basic --location westus
 (name of ACR should be unique within azure. sku Basic means we are using basic consumption model)
 
 --We should enable Admin account for the ACR registry we created. Because in some scenarios admin account is required to deploy images from ACR - 
@@ -86,7 +86,7 @@ kubectl config get-contexts
 kubectl config use-context [contextname]
 
 --Create image pull secret, required while pulling images from ACR to AKS
-kubectl create secret docker-registry acr-secret --docker-server=kkshoppingappacr.azurecr.io --docker-username=kkshoppingappacr --docker-password=2k1xQw0y5qkWV0Vs9gy9l/8JgzJYPNxKIRLlPyQw5o+ACRAQvBkF --docker-email=mkk6160@gmail.com
+kubectl create secret docker-registry acr-secret --docker-server=kkshoppingappacr.azurecr.io --docker-username=kkshoppingappacr --docker-password=+onXKxOHOzKDsQnzS6UUXfONNO/sNJ3P7mLex4STGA+ACRBnsA9i --docker-email=mkk6160@gmail.com
 
 --get these infos from portal
 

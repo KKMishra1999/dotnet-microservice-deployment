@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: shoppingclient
-          image: kkshoppingappacr.azurecr.io/shoppingclient:v2
+          image: kkshoppingappacr.azurecr.io/shoppingclient:v1
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
