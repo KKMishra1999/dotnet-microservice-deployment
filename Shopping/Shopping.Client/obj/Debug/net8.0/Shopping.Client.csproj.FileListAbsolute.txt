@@ -29,3 +29,6 @@ C:\Users\mkk61\OneDrive\Desktop\AzureProjects\dotnet-microservice-de\Shopping\Sh
 C:\Users\mkk61\OneDrive\Desktop\AzureProjects\dotnet-microservice-de\Shopping\Shopping.Client\obj\Debug\net8.0\Shopping.Client.pdb
 C:\Users\mkk61\OneDrive\Desktop\AzureProjects\dotnet-microservice-de\Shopping\Shopping.Client\obj\Debug\net8.0\Shopping.Client.genruntimeconfig.cache
 C:\Users\mkk61\OneDrive\Desktop\AzureProjects\dotnet-microservice-de\Shopping\Shopping.Client\obj\Debug\net8.0\ref\Shopping.Client.dll
+C:\Users\mkk61\OneDrive\Desktop\AzureProjects\dotnet-microservice-de\Shopping\Shopping.Client\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\mkk61\OneDrive\Desktop\AzureProjects\dotnet-microservice-de\Shopping\Shopping.Client\obj\Debug\net8.0\Shopping.Client.csproj.AssemblyReference.cache
+C:\Users\mkk61\OneDrive\Desktop\AzureProjects\dotnet-microservice-de\Shopping\Shopping.Client\obj\Debug\net8.0\Shopping.A7D506CE.Up2Date

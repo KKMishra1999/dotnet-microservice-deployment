@@ -1,0 +1,38 @@
+version check
+az --version
+
+az login (login to azure cli)
+az login --tenant [tenant id]
+
+Create Resource Group
+az group create --name myRG --location westeurope
+
+Create ACR resource
+az acr create --resource-group myRG --name kkshoppingacr --sku Basic
+(name of ACR should be unique within azure. sku Basic means we are using basic consumption model)
+
+We should enable Admin account for the ACR registry we created. Because in some scenarios admin account is required to deploy images from ACR - 
+az acr update -n kkshoppingacr --admin-enabled true
+
+Login to ACR-
+az acr login --name kkshoppingacr
+
+Before pushing the images to ACR we have to tag them with the ACR login server
+To get the login server name - 
+az acr list --resource-group learning-azure-rg --query "[].{acrLoginServer:loginServer}" --output table
+output - kkshoppingacr.azurecr.io
+alternatively from azure portal, going into the acr under settings -> access keys we will find the login server name.
+
+Now tag the images
+docker tag shoppingapi:latest kkshoppingacr.azurecr.io/shoppingapi:v1
+docker tag shoppingclient:latest kkshoppingacr.azurecr.io/shoppingclient:v1
+
+Now push the images to acr
+docker push kkshoppingacr.azurecr.io/shoppingapi:v1
+docker push kkshoppingacr.azurecr.io/shoppingclient:v1
+
+List repositories in the acr
+az acr repository list --name kkshoppingacr --output table
+
+List the tags that the images have
+az acr repository show-tags --name kkshoppingacr --repository shoppingclient --output table

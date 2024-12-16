@@ -1,0 +1,113 @@
+--version check
+az --version
+
+az login (login to azure cli)
+az login --tenant [tenant id]
+
+--Create Resource Group
+az group create --name myRG --location westus
+
+--Create ACR resource
+az acr create --resource-group myRG --name kkshoppingappacr --sku Basic --location westus
+(name of ACR should be unique within azure. sku Basic means we are using basic consumption model)
+
+--We should enable Admin account for the ACR registry we created. Because in some scenarios admin account is required to deploy images from ACR - 
+az acr update -n kkshoppingappacr --admin-enabled true
+
+--Login to ACR-
+az acr login --name kkshoppingappacr
+
+--Before pushing the images to ACR we have to tag them with the ACR login server
+To get the login server name - 
+az acr list --resource-group learning-azure-rg --query "[].{acrLoginServer:loginServer}" --output table
+output - kkshoppingappacr.azurecr.io
+--alternatively from azure portal, going into the acr under settings -> access keys we will find the login server name.
+
+--Now tag the images
+docker tag shoppingapi:latest kkshoppingappacr.azurecr.io/shoppingapi:v1
+docker tag shoppingclient:latest kkshoppingappacr.azurecr.io/shoppingclient:v1
+
+--Now push the images to acr
+docker push kkshoppingappacr.azurecr.io/shoppingapi:v1
+docker push kkshoppingappacr.azurecr.io/shoppingclient:v1
+
+--List repositories in the acr
+az acr repository list --name kkshoppingappacr --output table
+
+--List the tags that the images have
+az acr repository show-tags --name kkshoppingappacr --repository shoppingclient --output table
+
+--Create ASK cluster
+az aks create --resource-group learning-azure-rg --name kkAKSCluster --node-count 1 --generate-ssh-keys --attach-acr kkshoppingappacr --location westus
+
+--Getting error
+(MissingSubscriptionRegistration) The subscription is not registered to use namespace 'Microsoft.ContainerService'. See https://aka.ms/rps-not-found for how to register subscriptions.
+Code: MissingSubscriptionRegistration
+Message: The subscription is not registered to use namespace 'Microsoft.ContainerService'. See https://aka.ms/rps-not-found for how to register subscriptions.
+Exception Details:      (MissingSubscriptionRegistration) The subscription is not registered to use namespace 'Microsoft.ContainerService'. See https://aka.ms/rps-not-found for how to register subscriptions.
+        Code: MissingSubscriptionRegistration
+        Message: The subscription is not registered to use namespace 'Microsoft.ContainerService'. See https://aka.ms/rps-not-found for how to register subscriptions.
+        Target: Microsoft.ContainerService
+
+--Register the Microsoft.ContainerService provider: Run the following command to register the Microsoft.ContainerService resource provider:
+az provider register --namespace Microsoft.ContainerService
+
+--Check the registration status: You can check if the registration was successful with this command:
+az provider show --namespace Microsoft.ContainerService --query "registrationState"
+
+--Once Registered retry creating AKS cluster
+error - (ErrCode_InsufficientVCPUQuota) Insufficient regional vcpu quota left for location westus. left regional vcpu quota 0, requested quota 2
+Code: ErrCode_InsufficientVCPUQuota
+Message: Insufficient regional vcpu quota left for location westus. left regional vcpu quota 0, requested quota 2
+
+--Try another location
+az aks create --resource-group learning-azure-rg --name kkAKSCluster --node-count 1 --generate-ssh-keys --attach-acr kkshoppingappacr --location westeurope
+
+--don't have providers register for them
+az provider register --namespace Microsoft.ClassicCompute
+az provider show --namespace Microsoft.ClassicCompute --query "registrationState"
+
+az provider register --namespace Microsoft.Compute
+az provider show --namespace Microsoft.Compute --query "registrationState"
+
+--Now problem should get fixed
+
+
+--Install AKS cli to run Kubectl commands on aks cluster
+az aks install-cli
+
+--Get credentials for login to aks cluster
+az aks get-credentials --resource-group learning-azure-rg --name kkAKSCluster
+
+--Get contexts
+kubectl config get-contexts
+
+--switch contexts
+kubectl config use-context [contextname]
+
+--Create image pull secret, required while pulling images from ACR to AKS
+kubectl create secret docker-registry acr-secret --docker-server=kkshoppingappacr.azurecr.io --docker-username=kkshoppingappacr --docker-password=2k1xQw0y5qkWV0Vs9gy9l/8JgzJYPNxKIRLlPyQw5o+ACRAQvBkF --docker-email=mkk6160@gmail.com
+
+--get these infos from portal
+
+--update manifest according to AKS
+
+--run manifests
+kubectl apply -f . (apply all the manifest in the current directory)
+
+--logs using labels and selectors
+kubectl logs -l app=shoppingclient
+kubectl get pods -l app=shoppingclient
+
+--scale deployment imperatively
+kubectl scale --replicas=3 <deployment-full-name>
+
+--check AKS version
+az aks show --resource-group learning-azure-rg --name kkAKSCluster --query "kubernetesVersion" -o tsv
+
+--get horizontal pod autoscalers
+kubectl get hpa
+
+--While doing zero downtime deployment , k8s creates new pods keeping alive the existing pods. So it can be unsuccessful due to limited CPU resources.
+--So we should update the CPU resource configs.
+

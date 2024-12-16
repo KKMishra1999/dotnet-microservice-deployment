@@ -1,0 +1,6 @@
+1. Goto the app service where the app is running.
+2. Goto deployment center, verify the docker hub registry is selected or not.
+3. Turn Continuous deployment ON.(The webhook URL will be required further).
+4. Go into the docker repo, webhooks tab.
+5. Create a new webhook, name it and give the webhook URL from azure web app.
+6. This webhook is now attached, so when the image changes in docker hub, the azure web app will pull the latest image and deploy the application.

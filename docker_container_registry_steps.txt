@@ -1,0 +1,8 @@
+docker login
+
+---The image we are going to push to docker hub should mandatorily have a tag
+---Tag the image with the repository name
+docker tag [imageId] [reponame]
+
+---Push the image
+docker push [reponame]:[tag]

@@ -1,7 +1,28 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\mkk61\\OneDrive\\Desktop\\AzureProjects\\dotnet-microservice-de\\Shopping\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DB9331A6-EED4-4DB5-BF14-D158811595FF}|docker-compose.dcproj|c:\\users\\mkk61\\onedrive\\desktop\\azureprojects\\dotnet-microservice-de\\shopping\\docker-compose.override.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{DB9331A6-EED4-4DB5-BF14-D158811595FF}|docker-compose.dcproj|solutionrelative:docker-compose.override.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D75C345F-3703-45CD-9139-CCB52A8CA4D5}|Shopping.Client\\Shopping.Client.csproj|c:\\users\\mkk61\\onedrive\\desktop\\azureprojects\\dotnet-microservice-de\\shopping\\shopping.client\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D75C345F-3703-45CD-9139-CCB52A8CA4D5}|Shopping.Client\\Shopping.Client.csproj|solutionrelative:shopping.client\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{871F590C-61DC-4C18-B5B4-0A58BCEA9BFE}|Shopping.API\\Shopping.API.csproj|c:\\users\\mkk61\\onedrive\\desktop\\azureprojects\\dotnet-microservice-de\\shopping\\shopping.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{871F590C-61DC-4C18-B5B4-0A58BCEA9BFE}|Shopping.API\\Shopping.API.csproj|solutionrelative:shopping.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB9331A6-EED4-4DB5-BF14-D158811595FF}|docker-compose.dcproj|c:\\users\\mkk61\\onedrive\\desktop\\azureprojects\\dotnet-microservice-de\\shopping\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{DB9331A6-EED4-4DB5-BF14-D158811595FF}|docker-compose.dcproj|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D75C345F-3703-45CD-9139-CCB52A8CA4D5}|Shopping.Client\\Shopping.Client.csproj|c:\\users\\mkk61\\onedrive\\desktop\\azureprojects\\dotnet-microservice-de\\shopping\\shopping.client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D75C345F-3703-45CD-9139-CCB52A8CA4D5}|Shopping.Client\\Shopping.Client.csproj|solutionrelative:shopping.client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +30,76 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "docker-compose.override.yml",
+              "DocumentMoniker": "C:\\Users\\mkk61\\OneDrive\\Desktop\\AzureProjects\\dotnet-microservice-de\\Shopping\\docker-compose.override.yml",
+              "RelativeDocumentMoniker": "docker-compose.override.yml",
+              "ToolTip": "C:\\Users\\mkk61\\OneDrive\\Desktop\\AzureProjects\\dotnet-microservice-de\\Shopping\\docker-compose.override.yml",
+              "RelativeToolTip": "docker-compose.override.yml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2024-12-01T07:48:30.812Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "docker-compose.yml",
+              "DocumentMoniker": "C:\\Users\\mkk61\\OneDrive\\Desktop\\AzureProjects\\dotnet-microservice-de\\Shopping\\docker-compose.yml",
+              "RelativeDocumentMoniker": "docker-compose.yml",
+              "ToolTip": "C:\\Users\\mkk61\\OneDrive\\Desktop\\AzureProjects\\dotnet-microservice-de\\Shopping\\docker-compose.yml",
+              "RelativeToolTip": "docker-compose.yml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2024-12-01T07:48:28.366Z",
+              "IsPinned": true
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\mkk61\\OneDrive\\Desktop\\AzureProjects\\dotnet-microservice-de\\Shopping\\Shopping.Client\\appsettings.json",
+              "RelativeDocumentMoniker": "Shopping.Client\\appsettings.json",
+              "ToolTip": "C:\\Users\\mkk61\\OneDrive\\Desktop\\AzureProjects\\dotnet-microservice-de\\Shopping\\Shopping.Client\\appsettings.json",
+              "RelativeToolTip": "Shopping.Client\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-01T07:58:58.777Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\mkk61\\OneDrive\\Desktop\\AzureProjects\\dotnet-microservice-de\\Shopping\\Shopping.Client\\Program.cs",
+              "RelativeDocumentMoniker": "Shopping.Client\\Program.cs",
+              "ToolTip": "C:\\Users\\mkk61\\OneDrive\\Desktop\\AzureProjects\\dotnet-microservice-de\\Shopping\\Shopping.Client\\Program.cs",
+              "RelativeToolTip": "Shopping.Client\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T07:57:56.039Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\mkk61\\OneDrive\\Desktop\\AzureProjects\\dotnet-microservice-de\\Shopping\\Shopping.API\\appsettings.json",
+              "RelativeDocumentMoniker": "Shopping.API\\appsettings.json",
+              "ToolTip": "C:\\Users\\mkk61\\OneDrive\\Desktop\\AzureProjects\\dotnet-microservice-de\\Shopping\\Shopping.API\\appsettings.json",
+              "RelativeToolTip": "Shopping.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-01T07:53:27.84Z",
+              "EditorCaption": ""
             }
           ]
         }
